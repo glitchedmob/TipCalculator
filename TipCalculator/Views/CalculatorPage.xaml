@@ -2,12 +2,62 @@
 
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TipCalculator.Views.CalculatorPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Hello, world!"
-                   VerticalOptions="CenterAndExpand"
-                   HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+             x:Class="TipCalculator.Views.CalculatorPage"
+             BackgroundColor="Black">
+    <StackLayout>
+        <Grid Padding="35,0,35,35">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="2" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="2" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="2" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Bill"
+                   Style="{StaticResource DefaultLabelStyle}"
+                   Grid.Row="0" Grid.Column="0" />
+            <Label Text="$28.95"
+                   Style="{StaticResource DefaultLabelStyle}"
+                   HorizontalTextAlignment="End" 
+                   Grid.Row="0" Grid.Column="1" />
+            <BoxView Color="White" HeightRequest="2" HorizontalOptions="Fill"
+                     Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" />
+            
+            <Label Text="Tip"
+                   Style="{StaticResource DefaultLabelStyle}"
+                   Grid.Row="2" Grid.Column="0" />
+            <Label Text="20%"
+                   Style="{StaticResource DefaultLabelStyle}"
+                   HorizontalTextAlignment="End" 
+                   Grid.Row="2" Grid.Column="1" />
+            <BoxView Color="White" HeightRequest="2" HorizontalOptions="Fill"
+                     Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" />
+            
+            <Label Text="Bill Total"
+                   Style="{StaticResource DefaultLabelStyle}"
+                   Grid.Row="4" Grid.Column="0" />
+            <Label Text="$34.74"
+                   Style="{StaticResource DefaultLabelStyle}"
+                   HorizontalTextAlignment="End" 
+                   Grid.Row="4" Grid.Column="1" />
+            <BoxView Color="White" HeightRequest="2" HorizontalOptions="Fill"
+                     Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" />
+            
+            <Label Text="Tip Total"
+                   Style="{StaticResource DefaultLabelStyle}"
+                   Grid.Row="6" Grid.Column="0" />
+            <Label Text="$5.79"
+                   Style="{StaticResource DefaultLabelStyle}"
+                   HorizontalTextAlignment="End" 
+                   Grid.Row="6" Grid.Column="1" />
+            
+        </Grid>
+    </StackLayout>
 </ContentPage>

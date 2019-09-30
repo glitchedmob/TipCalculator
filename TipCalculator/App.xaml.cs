@@ -11,7 +11,11 @@ namespace TipCalculator
         {
             InitializeComponent();
 
-            MainPage = new CalculatorPage();
+            MainPage = new NavigationPage(new CalculatorPage())
+            {
+                BarBackgroundColor = Color.Black,
+                BarTextColor = Color.White,
+            };
         }
 
         protected override void OnStart()
