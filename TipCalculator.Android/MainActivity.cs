@@ -9,7 +9,7 @@ using Android.OS;
 
 namespace TipCalculator.Droid
 {
-    [Activity(Label = "TipCalculator", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "TipCalculator", Icon = "@mipmap/icon", Theme = "@style/MainTheme.Base", ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)

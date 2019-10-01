@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TipCalculator.ViewModels;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -43,18 +44,36 @@ namespace TipCalculator.Views
             var button = sender as Button;
 
             if (button == null) return;
-
+            
+            TryVibrate();
             BillTipViewModel.OnInput(button.Text);
         }
 
         private void SetBillCurrentInput(object sender, EventArgs e)
         {
+
+            TryVibrate();
             BillTipViewModel.CurrentInput = BillTipViewModel.InputType.Bill;
         }
         
         private void SetTipCurrentInput(object sender, EventArgs e)
         {
+            TryVibrate();
             BillTipViewModel.CurrentInput = BillTipViewModel.InputType.Tip;
+        }
+
+        private bool TryVibrate()
+        {
+            try
+            {
+                var duration = TimeSpan.FromMilliseconds(50);
+                Vibration.Vibrate(duration);
+                return true;
+            }
+            catch (FeatureNotEnabledException exception)
+            {
+                return false;
+            }
         }
     }
 }
